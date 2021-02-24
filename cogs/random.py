@@ -17,9 +17,9 @@ class Randomized(commands.Cog):
         bc_decision = random.choice(["Based", "Cringe"])
         punctuation_ending = random.choice([random.choice(("!", ".")) * x for x in range(1, 8)])
         await ctx.send(f"**{option}** are **{bc_decision}**{punctuation_ending}")
-        await ctx.bot.channels.bm.send("```"
-                                       f"{option}, {bc_decision}{punctuation_ending}   [{ctx.message.created_at}]"
-                                       "```")
+        await ctx.bot.config.channels.bm.send("```"
+                                              f"{option}, {bc_decision}{punctuation_ending}   [{ctx.message.created_at}]"
+                                              "```")
 
     @commands.command(aliases=["song", "rs"])
     async def random_song(self, ctx):
